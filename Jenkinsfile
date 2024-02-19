@@ -18,6 +18,10 @@ pipeline{
         	steps{
         		script{
         		sh 'docker build -t spring-boot-jenkins:latest .'
+        		withCredentials([string(credentialsId: '7674836842', variable: 'dockerpassword')]) {
+    			sh 'docker login -u 7674836842 -p {dockerpassword}'
+				}
+				sh 'docker push spring-boot-jenkins:latest'
         		}
         	}
         }
