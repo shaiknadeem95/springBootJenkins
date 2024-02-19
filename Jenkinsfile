@@ -18,12 +18,18 @@ pipeline{
         	steps{
         		script{
         		sh 'docker build -t 7674836842/spring-boot-jenkins-nadeem-pro1:latest .'
-        		withCredentials([string(credentialsId: 'dockerpwd', variable: 'dockerpassword')]) {
-    			sh 'docker login -u 7674836842 -p ${dockerpassword}'
-    			sh 'docker push 7674836842/spring-boot-jenkins-nadeem-pro1:latest'
-				}
         		}
         	}
         }
-    }
+        stage('pushing image into docker hub')
+        {
+          steps[
+          script{
+          withCredentials([string(credentialsId: 'dockerpwd', variable: 'dockerpassword')]) {
+    			sh 'docker login -u 7674836842 -p ${dockerpassword}'
+    			sh 'docker push 7674836842/spring-boot-jenkins-nadeem-pro1:latest'
+				}
+				}
+			}
+		}
 }
