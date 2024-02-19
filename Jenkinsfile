@@ -17,7 +17,7 @@ pipeline{
         {
         	steps{
         		script{
-        		sh 'docker build -t springBootJenkins:latest .'
+        		sh 'docker build -t spring-boot-jenkins:latest .'
         		}
         	}
         }
