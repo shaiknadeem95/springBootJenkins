@@ -61,6 +61,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>springBootJenkins</finalName>
 	</build>
 
 </project>
