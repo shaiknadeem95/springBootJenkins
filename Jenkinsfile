@@ -13,5 +13,13 @@ pipeline{
         }
             
         }
+        stage('building the docker image')
+        {
+        	steps{
+        		script{
+        		sh 'docker build -t springBootJenkins:latest .'
+        		}
+        	}
+        }
     }
 }
