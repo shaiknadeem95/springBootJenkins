@@ -14,7 +14,7 @@ public class SpringBootJenkinsApplication {
 	@GetMapping(value="/hello-test")
 	public String helloWorld()
 	{
-		return "hello world";
+		return "world";
 	}
 
 }
